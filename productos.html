@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRODUCTOS STYLES =D!</title>
+</head>
+<body>
+    <input type="text">
+    <button>Busquemos =DDD!!</button>
+    <table border="solid"> 
+        <thead>
+            <th> ID =DD! </th>
+            <th> Nombre =D!!! </th>
+            <th> Precioo =D!! jaajjaajaa =P!!</th>
+        </thead>
+        <tbody> </tbody>
+    </table> 
+    <script>
+        const tbody = document.querySelector("tbody")
+        const btn = document.querySelector("button")
+        const input = document.querySelector("input")
+
+        const productos = [
+            {
+                id: "AT12S", nombre: "Helado 5L", precio: 14990
+            },
+            {
+                id: "YEEM1", nombre: "Hielo 1KG", precio: 5990
+            },
+            {
+                id: "PSIQ4", nombre: "Agua 1.5L", precio: 14990
+            },
+            {
+                id: "MEPC7", nombre: "Soda 400ML", precio: 890
+            }
+        ];
+        
+        function renderRows(productos){
+            tbody.innerHTML = "";
+            productos.forEach((producto) => {
+                tbody.innerHTML += `
+                <tr>
+                    <td> ${producto.id}</td>
+                    <td> ${producto.nombre}</td>
+                    <td> ${producto.precio}</td>
+                </tr>`; 
+            });
+        }
+        renderRows(productos);
+
+        btn.addEventListener("click", () => {
+            const precio = input.value;
+            const productosFiltrados = productos.filter(
+                (producto) => producto.precios >= precio
+            );
+            renderRows(productosFiltrados)
+        });
+    </script>
+</body>
+</html>

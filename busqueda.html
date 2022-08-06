@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A COOL TO DO LIST =D!</title>
+</head>
+<body>
+    <input type="text" id="todo">
+    <button id="todobutton"> To Do =D!!: </button>
+    <ul id="todoul"> </ul>
+    <span id="cuenta-tareas"></span>
+    <input type="text" id="searchingtodo">
+    <button id="searchingbutton"> Searching To Do =D!!!: </button>
+    <ul id="todofinded"> </ul>
+    <script>
+        const tareas = []
+        let toDoInput = document.querySelector("#todo")
+        let toDoButton = document.querySelector("#todobutton")
+        let toDoUl = document.querySelector("#todoul")
+        let toDoCount = document.querySelector("#cuenta-tareas")     
+        let searchingtToDo = document.querySelector("#searchingtodo")
+        let searchingButton = document.querySelector("#searchingbutton")
+        let toDoFinded = document.querySelector("#todofinded")
+        
+        function renderTareas(){
+            let html = ""
+            for (let tarea of tareas){
+                html +=  `<li> ${tarea.nombre} <button onclick="erase(${tarea.id})"> Eliminar =DD!! </button> </li>`
+            }
+            toDoUl.innerHTML = html
+            toDoCount.innerHTML = tareas.length
+        }
+
+        toDoButton.addEventListener("click", () => {
+        const newToDo = 
+            {
+                id: Date.now(), nombre: toDoInput.value
+            }
+        tareas.push(newToDo)
+            
+        toDoInput.value = ""
+        renderTareas()
+        })
+
+        function erase(id){
+            const index = tareas.findIndex((ele) => ele.id == id)
+            tareas.splice(index, 1)
+            renderTareas()
+        }
+
+        searchingButton.addEventListener("click", () => {
+            const nombreTarea = searchingButton.value
+            const tareasFiltradas = tareas.filter((tarea) => tarea.nombre == nombreTarea
+            );
+            renderTareas()
+        })
+
+    </script>
+</body>
+</html>
