@@ -1,18 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>FIFTH JS CHALLENGE ADL =D!</title>
 </head>
+
 <body>
+    <h1>To Do List =P!!!:</h1>
+    <hr>
     <input id="inputToDo" type="text">
-    <button id="buttonToDo"> Add To Do =D!! </button>
-    <ul id="toDoList"> </ul>
-    <p>To Do =D!!:<span id="toDoCount"> </span> <p>
-    <p>Checked =DDD!!:<span id="toDoCount"> </span> </p>
+    <button id="buttonToDo" class=" btn btn-success"> Add To Do =D!! </button>
+    <main class="d-flex">
+        <section id="totalSection" class="d-flex flex-column">
+            <p>Total To Do =D!!: <span id="toDoCount"> 3 </span> </p>
+            <p>Checked =DDD!!: <span id="toDoChecked"> 0 </span> </p>
+        </section>
+        <section id="toDoSection" class="d-flex flex-column">
+            <div class="d-flex">
+                <p> <span> ID =D!!: </span></p>
+                <p> <span> Name =D!!: </span></p>
+            </div>
+            <div>
+                <ul id="toDoList"> </ul>
+            </div>
+        </section>
+    </main>
     <script src="assets/js/script.js"> </script>
 </body>
+
 </html>
