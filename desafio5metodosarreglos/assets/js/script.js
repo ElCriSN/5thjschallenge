@@ -15,17 +15,7 @@ let toDoList = document.querySelector("#toDoList")
 let toDoCount = document.querySelector("#toDoCount")
 let toDoChecked = document.querySelector("#toDoChecked")
 
-// let html = ""
-// for (let toDoElement of toDo) {
-//     html += `<li> ${toDoElement.id} ${toDoElement.name} <input
-//     onclick="
-//             checkedCount(${toDoElement.id})
-//     "
-//     class="checkedInput" type="checkbox"> <button class="btn btn-danger" onclick="erase(${toDoElement.id})
-//     "> Erase To Do =D!! </button> </li>`
-// }
-// toDoList.innerHTML = html
-// toDoCount.innerHTML = toDo.length
+
 renderToDo()
 function renderToDo() {
     let html = ""
@@ -45,6 +35,7 @@ function renderToDo() {
         toDoChecked.innerHTML = arregloDeTrues.length
         " class="checkedInput" type="checkbox"> <button class="btn btn-danger" onclick="erase(${toDoElement.id})"> Erase To Do =D!! </button> </li>`
         }
+
     }
     toDoList.innerHTML = html
     toDoCount.innerHTML = toDo.length
@@ -71,7 +62,6 @@ function checkedCount(id) {
     const arregloDeTrues = toDo.filter(ele1 => ele1.status == true)
     toDoChecked.innerHTML = arregloDeTrues.length
     renderToDo()
-    console.log(toDo)
 }
 
 function checkedCount0(id) {
@@ -80,6 +70,5 @@ function checkedCount0(id) {
     const arregloDeTrues = toDo.filter(ele2 => ele2.status == true)
     toDoChecked.innerHTML = arregloDeTrues.length
     renderToDo()
-    console.log(toDo)
 }
 
