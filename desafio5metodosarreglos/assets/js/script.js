@@ -45,10 +45,9 @@ function renderToDo() {
         toDoChecked.innerHTML = arregloDeTrues.length
         " class="checkedInput" type="checkbox"> <button class="btn btn-danger" onclick="erase(${toDoElement.id})"> Erase To Do =D!! </button> </li>`
         }
-
-        toDoList.innerHTML = html
-        toDoCount.innerHTML = toDo.length
     }
+    toDoList.innerHTML = html
+    toDoCount.innerHTML = toDo.length
 }
 
 toDoButton.addEventListener("click", () => {
